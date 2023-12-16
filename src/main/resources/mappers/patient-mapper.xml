@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-</beans>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Patient">
+    <!--   쿼리문 전체적으로 수정해야한다.-->
+    <insert id="insertPatient">
+        insert into patient (name, age, gender, phone , address, sick, heal)
+        values
+            (#{name} , #{age} , #{gender} , #{phone}, #{address} , #{sick} , #{heal} )
+    </insert>
+    <update id="updatePatient">
+        update patient
+        set name=#{name}, age=#{age}, gender=#{gender}, phone=#{phone}, address=#{address}, sick=#{sick}, heal=#{heal}
+        where seq=#{seq}
+    </update>
+    <delete id="deletePatient">
+        delete from patient where seq=#{seq}
+    </delete>
+    <select id="getPatient" resultType="patient">
+        select * from patient where seq=#{seq}
+    </select>
+    <select id="getPatientList" resultType="patient">
+        select * from patient order by seq desc
+    </select>
+</mapper>

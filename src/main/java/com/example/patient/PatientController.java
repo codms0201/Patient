@@ -17,7 +17,7 @@ public class PatientController {
     @RequestMapping(value = "/patient/list", method = RequestMethod.GET)
     public String patientlist(Model model){
         model.addAttribute("list", patientService.getPatientList());
-        return "post";
+        return "list";
     }
     @RequestMapping(value="/patient/add", method = RequestMethod.GET)
     public String addPost(){
