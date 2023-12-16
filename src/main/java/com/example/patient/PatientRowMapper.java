@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PatientRowMapper implements RowMapper<PatientVO> {
+    @Override
     public PatientVO mapRow(ResultSet rs, int rowNum) throws SQLException {
         PatientVO vo = new PatientVO();
         vo.setSeq(rs.getInt("seq"));

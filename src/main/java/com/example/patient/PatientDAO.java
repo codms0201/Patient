@@ -12,28 +12,23 @@ public class PatientDAO {
     SqlSession sqlSession;
 
     public int insertPatient(PatientVO vo) {
-        int result = sqlSession.insert("Patient.insertPatient", vo);
-        return result;
+        return sqlSession.insert("Patient.insertPatient", vo);
     }
 
     public PatientVO getPatient(int seq) {
-        PatientVO one = sqlSession.selectOne("Patient.getPatient", seq);
-        return one;
+        return sqlSession.selectOne("Patient.getPatient", seq);
     }
 
     public List<PatientVO> getPatientList() {
-        List<PatientVO> list = sqlSession.selectList("Patient.getPatientList");
-        return list;
+        return sqlSession.selectList("Patient.getPatientList");
     }
 
     public int updatePatient(PatientVO vo) {
-        int result = sqlSession.update("Patient.updatePatient", vo);
-        return result;
+        return sqlSession.update("Patient.updatePatient", vo);
     }
 
     public int deletePatient(int seq) {
-        int result = sqlSession.delete("Patient.deletePatient", seq);
-        return result;
+        return sqlSession.delete("Patient.deletePatient", seq);
     }
 }
 

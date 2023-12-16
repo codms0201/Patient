@@ -1,4 +1,4 @@
-package com.example.patient;
+package com.example.user;
 
 public class UserVO {
     private String userid;
